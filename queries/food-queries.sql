@@ -38,3 +38,6 @@ FROM products
 JOIN order_items ON products.id = order_items.product_id
 JOIN orders ON order_items.order_id = orders.id
 WHERE orders.id = 1;
+
+-- select all products
+SELECT * FROM products;

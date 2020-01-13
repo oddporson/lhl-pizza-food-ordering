@@ -9,7 +9,8 @@ CREATE TABLE products (
   product_type VARCHAR(255) NOT NULL,
   product_name VARCHAR(255) NOT NULL,
   description TEXT,
-  price INTEGER NOT NULL DEFAULT 0
+  price INTEGER NOT NULL DEFAULT 0,
+  product_image VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE customers (
