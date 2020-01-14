@@ -10,6 +10,10 @@ router.get("/", (req, res) => {
   db.query(`
   SELECT * FROM products;
   `)
-  .then(dbRes => res.json(dbRes.rows))
+  .then(dbRes => {
+    let templateVars = {};
+    res.render("menu", {templateVars: dbRes.rows});
+  })
 })
 module.exports = router;
+//dbRes => res.json(dbRes.rows)
