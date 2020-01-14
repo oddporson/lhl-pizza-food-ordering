@@ -53,14 +53,6 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/login", (req, res) => {
-  res.render("user_login");
-});
-
-app.get("/registration", (req, res) => {
-  res.render("user_registration");
-});
-
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
