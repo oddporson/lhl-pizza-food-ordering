@@ -49,7 +49,12 @@ app.use("/menu", menuRouter);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
+
   res.render("index");
+});
+
+app.get("/login", (req, res) => {
+  res.render("user_login");
 });
 
 app.listen(PORT, () => {
