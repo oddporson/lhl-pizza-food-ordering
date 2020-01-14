@@ -3,30 +3,37 @@
   <head>
     <title>LPL - Menu</title>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/home.css" tyle="text/css" />
+<head>
+  <title>Home Page</title>
 
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/home.css" tyle="text/css" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
-  </head>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
 
-  <body>
-    <%- include('./partials/_header'); %>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
+</head>
 
-    <% for(var i=0; i < templateVars.length; i++) { %>
-      <div>
-        <img src="<%= templateVars[i].product_image %>">
-        <h3><%= templateVars[i].product_name %></h3>
-        <p><%= templateVars[i].description %></p>
-        <p>$<%= templateVars[i].price %></p>
-      </div>
+<body>
+  <%- include('./partials/_header'); %>
+  <% for(var i=0; i < templateVars.length; i++) { %>
+    <div class="card" style="height: 34rem; width: 18rem; padding: 20px; float: left;">
+      <img src="<%= templateVars[i].product_image %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= templateVars[i].product_name %></h5>
+        <p class="card-text"><%= templateVars[i].description %></p>
+        <p class="card-text">$<%= templateVars[i].price %></p>
+        </div>
+      <a href="#" class="btn btn-primary">Add to order</a>
+    </div>
 
-   <% } %>
 
-  </body>
+  <% } %>
+
+</body>
+
 </html>
