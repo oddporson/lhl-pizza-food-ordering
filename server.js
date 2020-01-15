@@ -11,6 +11,7 @@ const app        = express();
 const morgan     = require('morgan');
 const menuRouter = require('./routes/menu');
 const saladRouter = require('./routes/salad');
+const popRouter = require('./routes/pop');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -44,6 +45,7 @@ app.use(express.static("public"));
 // app.use("/api/widgets", widgetsRoutes(db));
 app.use("/menu", menuRouter);
 app.use("/salad", saladRouter);
+app.use("/pop", popRouter);
 // Note: mount other resources here, using the same pattern above
 
 
