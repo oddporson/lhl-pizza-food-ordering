@@ -9,12 +9,11 @@ db.connect();
 router.get("/", (req, res) => {
   db.query(`
   SELECT * FROM products
-  WHERE product_type = 'pizza';
+  WHERE product_type = 'salad';
   `)
   .then(dbRes => {
     let templateVars = {};
-    res.render("menu", {templateVars: dbRes.rows});
+    res.render("salad", {templateVars: dbRes.rows});
   })
 })
 module.exports = router;
-//dbRes => res.json(dbRes.rows)

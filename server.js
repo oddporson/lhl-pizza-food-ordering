@@ -10,6 +10,7 @@ const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
 const menuRouter = require('./routes/menu');
+const saladRouter = require('./routes/salad');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -42,6 +43,7 @@ app.use(express.static("public"));
 // app.use("/api/users", usersRoutes(db));
 // app.use("/api/widgets", widgetsRoutes(db));
 app.use("/menu", menuRouter);
+app.use("/salad", saladRouter);
 // Note: mount other resources here, using the same pattern above
 
 

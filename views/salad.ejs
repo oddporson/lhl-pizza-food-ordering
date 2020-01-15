@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Salads</title>
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/home.css" tyle="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
+</head>
+
+<body>
+  <%- include('./partials/_header'); %>
+  <% for(var i=0; i < templateVars.length; i++) { %>
+    <div class="card" style="height: 34rem; width: 18rem; padding: 20px; float: left;">
+      <img src="<%= templateVars[i].product_image %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= templateVars[i].product_name %></h5>
+        <p class="card-text"><%= templateVars[i].description %></p>
+        <p class="card-text">$<%= templateVars[i].price %></p>
+        </div>
+      <a href="#" class="btn btn-primary">Add to order</a>
+    </div>
+  <% } %>
+
+  <div id="menu_order" class="col-xs-12 col-md-3 container">
+    <h3>Order Detail</h3>
+    <div  class=" panel panel-default">
+      <article class="panel-body">
+        <form action="/confirmation" method="POST">
+
+          <section class='order_item'>
+            <!-- JQ gets data from db to put on -->
+          </section>
+
+          <div class="panel panel-default">
+            <p>GST: 5%</p>
+            <p>PST: 7%</p>
+            <p id="total" data-total=0>Total: $0.00</p>
+            <input id="input_total" type="hidden" name="total">
+          </div>
+
+          <input type="text" name="phone" placeholder="Phone Number" pattern="^\d{3}-?\d{3}-?\d{4}$" required><br>
+          <input type="text" name="fname" placeholder="First Name"><br>
+          <input type="text" name="lname" placeholder="Last Name"><br>
+          <input type="submit" class="submit_total btn btn-default" value="Place my order!">
+        </form>
+      </article>
+    </div>
+  </div>
+
+</body>
+
+</html>
