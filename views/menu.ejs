@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>LPL - Menu</title>
 
 <head>
-  <title>Home Page</title>
+  <title>LPL - Menu</title>
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/home.css" tyle="text/css" />
+  <head>
+    <title>Home Page</title>
 
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/home.css" tyle="text/css" />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
-</head>
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="/pizza-app/styles/menu.css">
+
+  </head>
 
 <body>
   <%- include('./partials/_header'); %>
+  <div class="main-menu-mybtn">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary"><a class="text_mybtn" href="/menu">Pizza</a></button>
+      <button type="button" class="btn btn-secondary"><a class="text_mybtn" href="/salad">Salad</a></button>
+      <button type="button" class="btn btn-secondary"><a class="text_mybtn" href="/pop">Pop</a></button>
+    </div><br>
+  </div>
+
   <% for(var i=0; i < templateVars.length; i++) { %>
-    <div class="card" style="height: 34rem; width: 18rem; padding: 20px; float: left;">
-      <img src="<%= templateVars[i].product_image %>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><%= templateVars[i].product_name %></h5>
-        <p class="card-text"><%= templateVars[i].description %></p>
-        <p class="card-text">$<%= templateVars[i].price %></p>
-        </div>
-      <a href="#" class="btn btn-primary">Add to order</a>
+  <div class="card" style="height: 34rem; width: 18rem; padding: 20px; float: left; margin-left: 20px;">
+    <img src="<%= templateVars[i].product_image %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= templateVars[i].product_name %></h5>
+      <p class="card-text"><%= templateVars[i].description %></p>
+      <p class="card-text">$<%= templateVars[i].price %></p>
     </div>
+    <a href="#" class="btn btn-primary">Add to order</a>
+  </div>
   <% } %>
 
   <div id="menu_order" class="col-xs-12 col-md-3 container">
     <h3>Order Detail</h3>
-    <div  class=" panel panel-default">
+    <div class=" panel panel-default">
       <article class="panel-body">
         <form action="/confirmation" method="POST">
 

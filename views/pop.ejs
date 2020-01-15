@@ -18,8 +18,15 @@
 
 <body>
   <%- include('./partials/_header'); %>
+  <div class="main-menu-mybtn">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary"><a class="text_mybtn" href="/menu">Pizza</a class="text_mybtn"></button>
+      <button type="button" class="btn btn-secondary"><a class="text_mybtn" href="/salad">Salad</ class="text_mybtn"a></button>
+      <button type="button" class="btn btn-secondary"><a class="text_mybtn" href="/pop">Pop</a></ class="text_mybtn"button>
+    </div><br>
+  </div>
   <% for(var i=0; i < templateVars.length; i++) { %>
-    <div class="card" style="height: 34rem; width: 18rem; padding: 20px; float: left;">
+    <div class="card" style="height: 28rem; width: 18rem; padding: 20px; float: left; margin-left: 90px;">
       <img src="<%= templateVars[i].product_image %>" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"><%= templateVars[i].product_name %></h5>

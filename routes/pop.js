@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
   `)
   .then(dbRes => {
     let templateVars = {};
-    res.render("salad", {templateVars: dbRes.rows});
+    res.render("pop", {templateVars: dbRes.rows});
   })
 })
 module.exports = router;
