@@ -49,9 +49,19 @@ app.use("/menu", menuRouter);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-
   res.render("index");
 });
+
+// Confirmation GET
+app.get("/confirmation", (req, res) => {
+  res.render('order_confirmation')
+})
+
+// Confirmation POST
+app.post("/confirmation", (req,res) => {
+  res.render('order_confirmation')
+})
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
