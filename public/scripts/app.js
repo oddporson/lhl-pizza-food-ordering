@@ -48,4 +48,15 @@ $(() => {
 
     // window.localStorage.setItem(prodid, "prodid");
   })
+
+
+  // Toggle down cart detail
+  $('.nav-link').click(function() {
+    console.log("clicked!")
+    // $('.shopping_cart').toggle(function(){
+    //   $('.shopping_cart').focus
+    // });
+  });
+
+
 });

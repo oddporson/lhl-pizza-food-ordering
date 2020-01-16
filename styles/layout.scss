@@ -23,6 +23,6 @@ body {
 
 .badge {
   background-color: rgb(255, 255, 255);
-  border-radius: 16px; // need to ask mentor font size or text size won't work
+  border-radius: 16px !important; // need to ask mentor font size or text size won't work
   color: black;
 }
