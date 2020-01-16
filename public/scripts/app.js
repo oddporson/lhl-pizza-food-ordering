@@ -9,7 +9,7 @@ $(() => {
   });;
   console.log('hello!');
 
-
+  showCart();
   // Get existing cart from local storage if available
 
   $('.add-to-cart').on('click', function(e) {
@@ -26,10 +26,13 @@ $(() => {
     let menuItem = window.localStorage.getItem(prodid);
     console.log('type of menuItem:', typeof menuItem);
     if (!menuItem) {
-      menuItem = {id: prodid, name: prodname, description, price};
+      menuItem = {id: prodid, name: prodname, description, price, quantity: 1};
       window.localStorage.setItem(prodid, JSON.stringify(menuItem));
     } else {
       menuItem = JSON.parse(menuItem);
+      menuItem = {id: prodid, name: prodname, description, price, quantity: menuItem.quantity + 1};
+      window.localStorage.setItem(prodid, JSON.stringify(menuItem));
+      // menuItem = JSON.parse(menuItem);
     }
 
     // Read from local storage for cart contents
@@ -44,12 +47,18 @@ $(() => {
     // Render cart contents to HTML
     const shoppingCart = $('#shopping_cart');
     shoppingCart.empty();
-    shoppingCart.append(showCart());
+    showCart();
+    updateTotal();
+    // shoppingCart.append(showCart());
 
     // window.localStorage.setItem(prodid, "prodid");
   })
 
+  $('.toggle-cart').click(function() {
+    $('.cart').toggle();
+  })
 
+  // TO-DO: Do we need this or does it needs to be fixed?
   // Toggle down cart detail
   $('.nav-link').click(function() {
     console.log("clicked!")

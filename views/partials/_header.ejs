@@ -24,11 +24,34 @@
             <a class="nav-link" href="/menu">Menu</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-shopping-cart"></i> Cart <span class="badge">3</span></a>
-            <div class="dropdown-menu" style="">
-              <div id="shopping_cart" class="dropdown-item">
-                <!-- Items get added to shopping cart -->
-                </div>
+            <a class="nav-link dropdown-toggle toggle-cart" href="#" role="button" ><i class="fa fa-shopping-cart"></i> Cart <span class="badge">3</span></a>
+            <div class="cart" style="">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width:50%">Product</th>
+                    <th style="width:10%">Price</th>
+                    <th style="width:8%">Quantity</th>
+                    <th style="width:22%" class="text-center">Subtotal</th>
+                    <th style="width:10%"></th>
+                  </tr>
+                </thead>
+                <tbody  id="shopping_cart">
+                    <!-- Items get added to shopping cart -->
+                </tbody>
+                <tfoot>
+                  <!-- <tr class="visible-xs">
+                        <td class="text-center"><strong>Total 1.99</strong></td>
+                      </tr> -->
+                  <tr>
+                    <td><a href="/menu" class="btn btn-outline-warning">Continue Shopping</a></td>
+                    <td colspan="2" class="hidden-xs"></td>
+                    <td class="hidden-xs text-center"><strong>Total $<span id="total">0.00</span> </strong></td>
+                    <td><a href="/confirmation" class="btn btn-outline-success">Order</a></td>
+                  </tr>
+                </tfoot>
+              </table>
+              </div>
             </div>
           </li>
         </ul>
