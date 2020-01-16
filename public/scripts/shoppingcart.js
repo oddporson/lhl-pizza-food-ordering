@@ -59,9 +59,3 @@
     console.log('cart items:', cartItems);
     return $("#shopping_cart").append(cartItems);
   }
-
-  function hideCart() {
-
-  }
-
-
