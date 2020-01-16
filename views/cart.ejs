@@ -1,81 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Cart</title>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+<head>
+  <title>Cart</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <!-- Below is the from a different bootstrap for shopping cart -->
-    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
+
+  <!-- Below is the from a different bootstrap for shopping cart -->
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
   <!------ Include the above in your HEAD tag ---------->
 
-  </head>
+</head>
 
-  <body>
-    <%- include('./partials/_header'); %>
+<body>
+  <%- include('./partials/_header'); %>
 
 
-<div class="container">
-	<table id="cart" class="table table-hover table-condensed">
-    				<thead>
-						<tr>
-							<th style="width:50%">Product</th>
-							<th style="width:10%">Price</th>
-							<th style="width:8%">Quantity</th>
-							<th style="width:22%" class="text-center">Subtotal</th>
-							<th style="width:10%"></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td data-th="Product">
-								<div class="row">
-                  <!-- the img code is causing image to overlap the naming. -->
-									<!-- <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div> -->
-									<div class="col-sm-10">
-										<h4 class="nomargin">Product 1</h4>
-										<p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
-									</div>
-								</div>
-							</td>
-							<td data-th="Price">$1.99</td>
-							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
-							</td>
-							<td data-th="Subtotal" class="text-center">1.99</td>
-							<td class="actions" data-th="">
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-							</td>
-						</tr>
-					</tbody>
-					<tfoot>
-						<!-- <tr class="visible-xs">
+  <div class="container">
+    <table id="cart" class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th style="width:50%">Product</th>
+          <th style="width:10%">Price</th>
+          <th style="width:8%">Quantity</th>
+          <th style="width:22%" class="text-center">Subtotal</th>
+          <th style="width:10%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-th="Product">
+            <div class="row">
+              <!-- the img code is causing image to overlap the naming. -->
+              <!-- <div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div> -->
+              <div class="col-sm-10">
+                <h4 class="nomargin product-name">Delicious food</h4>
+                <p class="product-description">...</p>
+              </div>
+            </div>
+          </td>
+          <td class="product-price" data-th="Price">$0.00</td>
+          <td data-th="Quantity">
+            <input type="number" class="form-control text-center" value="1">
+          </td>
+          <td data-th="Subtotal" class="text-center">$0.00</td>
+          <td class="actions" data-th="">
+            <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+            <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <!-- <tr class="visible-xs">
 							<td class="text-center"><strong>Total 1.99</strong></td>
 						</tr> -->
-						<tr>
-							<td><a href="/menu" class="btn btn-outline-warning">Continue Shopping</a></td>
-							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
-							<td><a href="/confirmation" class="btn btn-outline-success">Order</a></td>
-						</tr>
-					</tfoot>
-				</table>
-</div>
+        <tr>
+          <td><a href="/menu" class="btn btn-outline-warning">Continue Shopping</a></td>
+          <td colspan="2" class="hidden-xs"></td>
+          <td class="hidden-xs text-center"><strong>Total $0.00 </strong></td>
+          <td><a href="/confirmation" class="btn btn-outline-success">Order</a></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
 
-  </body>
-  </html>
+</body>
 
-  <!-- <div id="menu_order" class="col-xs-12 col-md-3 container">
+</html>
+
+<!-- <div id="menu_order" class="col-xs-12 col-md-3 container">
     <h3>Order Detail</h3>
     <div class=" panel panel-default">
       <article class="panel-body">

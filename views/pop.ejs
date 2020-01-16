@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/shoppingcart.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
 </head>
 
@@ -26,14 +27,14 @@
     </div><br>
   </div>
   <% for(var i=0; i < templateVars.length; i++) { %>
-    <div class="card" style="height: 28rem; width: 18rem; padding: 20px; float: left; margin-left: 90px;">
+    <div data-prodid="<%= templateVars[i].id %>" data-prodname="<%= templateVars[i].product_name %>" data-description="<%= templateVars[i].description %>" data-price="<%= templateVars[i].price %>" class="card" style="height: 34rem; width: 18rem; padding: 20px; float: left; margin-left: 20px;">
       <img src="<%= templateVars[i].product_image %>" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"><%= templateVars[i].product_name %></h5>
         <p class="card-text"><%= templateVars[i].description %></p>
         <p class="card-text">$<%= templateVars[i].price %></p>
         </div>
-      <a href="#" class="btn btn-primary">Add to order</a>
+      <a href="#" class="btn btn-primary add-to-cart">Add to order</a>
     </div>
   <% } %>
 
