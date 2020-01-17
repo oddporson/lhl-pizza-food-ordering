@@ -78,14 +78,36 @@ $(() => {
     $('.cart').toggle();
   })
 
-  // TO-DO: Do we need this or does it needs to be fixed?
-  // Toggle down cart detail
-  $('.nav-link').click(function() {
-    console.log("clicked!")
-    // $('.shopping_cart').toggle(function(){
-    //   $('.shopping_cart').focus
-    // });
-  });
+  $('#place-order').click(function(){
+    console.log('hi')
+    $.ajax({
+      method: "GET",
+      url: "/cart/order",
+      data: {
 
+      }
+    })
+  })
+
+  // $('#buttons').on('click', function(e) {
+  //   $.ajax({
+  //     type: 'POST',
+  //     url: '/testtwilio',
+  //     data: {
+  //       "To": userCellPhone,
+  //       "From": "+1myTwilioNumber",
+  //       "Body": "Ahoy! Testing"
+  //     },
+  //     beforeSend: function(xhr) {
+  //       ...
+  //     },
+  //     success: function(data) {
+  //       console.log(data);
+  //     },
+  //     error: function(data) {
+  //       console.log(data);
+  //     }
+  //   });
+  // });
 
 });

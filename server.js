@@ -12,7 +12,7 @@ const morgan     = require('morgan');
 const menuRouter = require('./routes/menu');
 const saladRouter = require('./routes/salad');
 const popRouter = require('./routes/pop');
-const cartRouter = require('./routes/cart')
+const cartRouter = require('./routes/cart');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -72,3 +72,19 @@ app.post("/confirmation", (req,res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+
+
+// twilio SMS
+
+// client.messages.create({
+//       to: process.env.TWILIO_TEST_PHONE,
+//       from: '+16042279961',
+//       body: 'Thank you for your order. We will notify you via SMS when it\'s ready for pick up. Your order number is #12345.'
+//     }, function(err, message) {
+//       if(err) {
+//         console.error(err.message);
+//       }
+//     });
+
+// twilioService.sendMessage(process.env.TWILIO_TEST_PHONE, 'Hello')
