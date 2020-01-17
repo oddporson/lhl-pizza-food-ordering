@@ -1,7 +1,7 @@
 // See: https://sass-lang.com/
 
 body {
-  background-color: #EEE;
+  background-color: #FFF;
   h1 {
     color: #244751;
   }
@@ -9,6 +9,7 @@ body {
 //menu css styles
 .main-menu-mybtn {
   margin-left: 500px;
+  padding: 0 90px;
 }
 .text_mybtn {
   font-size: 15px;
@@ -20,10 +21,10 @@ body {
   margin-top: 600px;
 }
 
-
-.badge {
+.quantity-badge {
   background-color: rgb(255, 255, 255);
-  border-radius: 16px !important; // need to ask mentor font size or text size won't work
+  border-radius: 15px;
+  border-collapse: separate;
   color: black;
 }
 
@@ -33,6 +34,57 @@ body {
   padding: 1vw;
   border: 2px solid black;
   background-color: white;
-  min-width: 40vw;
+  min-width: 50vw;
   display: none;
+}
+
+.total-price {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.porson-wrapper {
+
+  margin: 0 auto;
+  width: 90%;
+  padding-top: 20px;
+
+}
+
+.btn-group {
+  border: solid 2px black;
+
+}
+
+.items-wrapper {
+  margin: 0 auto;
+  width: 90%;
+}
+
+// home page css
+.entrance {
+  background-color: #EEE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+
+}
+
+.entrance img {
+  border: solid 10px black;
+}
+
+.btn-lg {
+  margin: 15px 0 0 0;
+}
+
+.card {
+  margin: 20px;
+}
+
+th {
+  font-size: 15px;
+  color: rgb(216, 113, 22);
 }

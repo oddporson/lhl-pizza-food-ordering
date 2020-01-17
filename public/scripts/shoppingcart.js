@@ -9,9 +9,8 @@
     window.localStorage.setItem(cartStorageKey, JSON.stringify(cart));
   }
 
+  // get all items and loop through the items to get total
   function updateTotal() {
-    //get all itemswindow.localStorage.setItem(
-       //loop through the items to get a total
     let total = 0
     for(let item of Object.keys(window.localStorage)) {
       if(JSON.parse(window.localStorage.getItem(item)).price) {
@@ -19,16 +18,7 @@
         total += JSON.parse(window.localStorage.getItem(item)).price * JSON.parse(window.localStorage.getItem(item)).quantity
       }
     }
-
-
-
-
     $('#total').text(total);
-  }
-
-  function removeItemFromCart() {
-    // TODO
-  $( ".btn.btn-danger.btn-sm" ).remove(item)
   }
 
   function showCart() {
@@ -50,7 +40,7 @@
       </td>
       <td class="product-price" data-th="Price">$${item.price}</td>
       <td data-th="Quantity">${item.quantity}</td>
-      <td data-th="Subtotal" class="text-center">${item.price * item.quantity}</td>
+      <td data-th="Subtotal">${item.price * item.quantity}</td>
       <td class="actions" data-th="">
         <button class="remove-item" data-item=${item.id} class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
       </td>
