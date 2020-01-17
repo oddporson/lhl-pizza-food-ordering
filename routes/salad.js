@@ -1,5 +1,5 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 // refactor below code later
 const { Pool } = require('pg');
 const dbParams = require('../lib/db.js');
@@ -11,9 +11,9 @@ router.get("/", (req, res) => {
   SELECT * FROM products
   WHERE product_type = 'salad';
   `)
-  .then(dbRes => {
-    let templateVars = {};
-    res.render("salad", {templateVars: dbRes.rows});
-  })
+    .then(dbRes => {
+      let templateVars = {};
+      res.render("salad", { templateVars: dbRes.rows });
+    })
 })
 module.exports = router;

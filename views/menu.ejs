@@ -4,17 +4,17 @@
 
 <head>
   <title>LPL - Menu</title>
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/shoppingcart.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/shoppingcart.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
 
 <body>
   <%- include('./partials/_header'); %>
@@ -29,24 +29,23 @@
     </div>
 
     <div class="items-wrapper">
-    <% for(var i=0; i < templateVars.length; i++) { %>
-    <div data-prodid="<%= templateVars[i].id %>" data-prodname="<%= templateVars[i].product_name %>" data-description="<%= templateVars[i].description %>" data-price="<%= templateVars[i].price %>" class="card" style="height: 34rem; width: 18rem; padding: 20px; float: left; margin-left: 20px;">
-      <img src="<%= templateVars[i].product_image %>" class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title"><%= templateVars[i].product_name %></h5>
-        <p class="card-text"><%= templateVars[i].description %></p>
-        <p class="card-text">$<%= templateVars[i].price %></p>
+      <% for(var i=0; i < templateVars.length; i++) { %>
+      <div data-prodid="<%= templateVars[i].id %>" data-prodname="<%= templateVars[i].product_name %>"
+        data-description="<%= templateVars[i].description %>" data-price="<%= templateVars[i].price %>" class="card"
+        style="height: 34rem; width: 18rem; padding: 20px; float: left; margin-left: 20px;">
+        <img src="<%= templateVars[i].product_image %>" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title"><%= templateVars[i].product_name %></h5>
+          <p class="card-text"><%= templateVars[i].description %></p>
+          <p class="card-text">$<%= templateVars[i].price %></p>
+        </div>
+        <a href="#" class="btn btn-primary add-to-cart">Add to order</a>
       </div>
-      <a href="#" onclick="addedToCart()" class="btn btn-primary add-to-cart">Add to order</a>
+      <% } %>
     </div>
-    <% } %>
-  </div>
 
   </div>
-  <script>
-  function addedToCart() {
-    alert("Added to cart");
-  }
-  </script>
+
 </body>
+
 </html>

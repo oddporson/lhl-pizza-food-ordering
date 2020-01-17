@@ -1,5 +1,5 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const twilioService = require('../services/twilioService')
 // refactor below code later
 const { Pool } = require('pg');
@@ -8,7 +8,7 @@ const db = new Pool(dbParams);
 db.connect();
 
 router.get("/", (req, res) => {
-    res.render("cart");
+  res.render("cart");
 })
 
 router.get('/order', (req) => {

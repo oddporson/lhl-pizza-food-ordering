@@ -2,13 +2,13 @@
 require('dotenv').config();
 
 // Web server config
-const PORT       = process.env.PORT || 8080;
-const ENV        = process.env.ENV || "development";
-const express    = require("express");
+const PORT = process.env.PORT || 8080;
+const ENV = process.env.ENV || "development";
+const express = require("express");
 const bodyParser = require("body-parser");
-const sass       = require("node-sass-middleware");
-const app        = express();
-const morgan     = require('morgan');
+const sass = require("node-sass-middleware");
+const app = express();
+const morgan = require('morgan');
 const menuRouter = require('./routes/menu');
 const saladRouter = require('./routes/salad');
 const popRouter = require('./routes/pop');
@@ -64,7 +64,7 @@ app.get("/confirmation", (req, res) => {
 })
 
 // Confirmation POST
-app.post("/confirmation", (req,res) => {
+app.post("/confirmation", (req, res) => {
   res.render('order_confirmation')
 })
 
@@ -72,19 +72,3 @@ app.post("/confirmation", (req,res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
-
-
-
-// twilio SMS
-
-// client.messages.create({
-//       to: process.env.TWILIO_TEST_PHONE,
-//       from: '+16042279961',
-//       body: 'Thank you for your order. We will notify you via SMS when it\'s ready for pick up. Your order number is #12345.'
-//     }, function(err, message) {
-//       if(err) {
-//         console.error(err.message);
-//       }
-//     });
-
-// twilioService.sendMessage(process.env.TWILIO_TEST_PHONE, 'Hello')
