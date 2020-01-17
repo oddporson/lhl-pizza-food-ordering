@@ -42,7 +42,7 @@
       <td data-th="Quantity">${item.quantity}</td>
       <td data-th="Subtotal">${item.price * item.quantity}</td>
       <td class="actions" data-th="">
-        <button class="remove-item" data-item=${item.id} class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+        <button class="remove-item btn btn-danger btn-sm" data-item=${item.id}><i class="fa fa-trash-o"></i></button>
       </td>
     </tr>`);
     });
