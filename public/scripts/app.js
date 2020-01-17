@@ -10,6 +10,7 @@ $(() => {
   console.log('hello!');
 
   showCart();
+  updateTotal();
   // Get existing cart from local storage if available
 
   $('.add-to-cart').on('click', function(e) {
@@ -52,6 +53,25 @@ $(() => {
     // shoppingCart.append(showCart());
 
     // window.localStorage.setItem(prodid, "prodid");
+  })
+
+  $('.cart').on('click', '.remove-item', function(e) {
+    console.log('tried to remove', $(this).data('item'));
+    e.preventDefault();
+
+    window.localStorage.removeItem($(this).data('item'));
+    let cart = JSON.parse(window.localStorage.getItem('CART'));
+    delete cart[$(this).data('item')]
+    window.localStorage.setItem('CART', JSON.stringify(cart));
+
+
+    const shoppingCart = $('#shopping_cart');
+    shoppingCart.empty();
+
+    showCart();
+    updateTotal();
+
+
   })
 
   $('.toggle-cart').click(function() {

@@ -1,7 +1,7 @@
 
   const cartStorageKey = 'CART';
   function readCart() {
-    console.log('readCart:', (window.localStorage.getItem(cartStorageKey)));
+    // console.log('readCart:', (window.localStorage.getItem(cartStorageKey)));
     return JSON.parse(window.localStorage.getItem(cartStorageKey) || '{}');
   }
 
@@ -15,7 +15,7 @@
     let total = 0
     for(let item of Object.keys(window.localStorage)) {
       if(JSON.parse(window.localStorage.getItem(item)).price) {
-        console.log('why', JSON.parse(window.localStorage.getItem(item)))
+        // console.log('why', JSON.parse(window.localStorage.getItem(item)))
         total += JSON.parse(window.localStorage.getItem(item)).price * JSON.parse(window.localStorage.getItem(item)).quantity
       }
     }
@@ -35,7 +35,7 @@
     const cart = readCart();
     // Cart is an object; we are only interested in values from the key-value pairs
     const cartItems = Object.values(cart).map(function (item) {
-      console.log('cart item:', item);
+      // console.log('cart item:', item);
       return $(`
       <tr>
       <td data-th="Product">
@@ -52,10 +52,10 @@
       <td data-th="Quantity">${item.quantity}</td>
       <td data-th="Subtotal" class="text-center">${item.price * item.quantity}</td>
       <td class="actions" data-th="">
-        <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+        <button class="remove-item" data-item=${item.id} class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
       </td>
     </tr>`);
     });
-    console.log('cart items:', cartItems);
+    // console.log('cart items:', cartItems);
     return $("#shopping_cart").append(cartItems);
   }
