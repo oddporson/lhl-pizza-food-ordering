@@ -3,6 +3,8 @@ A food ordering experience for a single restaurant. Hungry clients of this ficti
 
 It's built with Node.JS, Express.JS, EJS, AJAX, Twilio API, jQuery, HTML5, SASS, and PosgreSQL.
 
+#### Contributors: [Panos Hatzinikolaou](https://github.com/Paahn), [Porson Lee](https://github.com/oddporson)
+
 ## Getting Started
 
 1. Install dependencies: `npm i`
